@@ -20,7 +20,7 @@ impl<'ctx, 'a> Codegen<'ctx, 'a> {
         }
     }
 
-    pub fn gen_stmt(&self, stmt: &Stmt) {
+    fn gen_stmt(&self, stmt: &Stmt) {
         match stmt {
             Stmt::AnnAssign(x) => (),
             Stmt::FunctionDef(field) => (),
@@ -32,5 +32,9 @@ impl<'ctx, 'a> Codegen<'ctx, 'a> {
             Stmt::Return(field) => (),
             _ => (),
         }
+    }
+
+    fn gen_ann_assign(&self, &StmtAnnAssign) {
+        
     }
 }
