@@ -21,6 +21,16 @@ impl<'ctx, 'a> Codegen<'ctx, 'a> {
     }
 
     pub fn gen_stmt(&self, stmt: &Stmt) {
-        match stmt {}
+        match stmt {
+            Stmt::AnnAssign(x) => (),
+            Stmt::FunctionDef(field) => (),
+            Stmt::ClassDef(field) => (),
+            Stmt::For(field) => (),
+            Stmt::While(field) => (),
+            Stmt::Expr(field) => (),
+            Stmt::If(field) => (),
+            Stmt::Return(field) => (),
+            _ => (),
+        }
     }
 }
