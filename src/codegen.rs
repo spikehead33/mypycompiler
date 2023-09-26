@@ -22,19 +22,25 @@ impl<'ctx, 'a> Codegen<'ctx, 'a> {
 
     fn gen_stmt(&self, stmt: &Stmt) {
         match stmt {
-            Stmt::AnnAssign(x) => (),
-            Stmt::FunctionDef(field) => (),
-            Stmt::ClassDef(field) => (),
-            Stmt::For(field) => (),
-            Stmt::While(field) => (),
-            Stmt::Expr(field) => (),
-            Stmt::If(field) => (),
-            Stmt::Return(field) => (),
+            Stmt::AnnAssign(x) => self.gen_ann_assign(x),
+            Stmt::FunctionDef(x) => (),
+            Stmt::ClassDef(x) => (),
+            Stmt::For(x) => (),
+            Stmt::While(x) => (),
+            Stmt::Expr(x) => (),
+            Stmt::If(x) => (),
+            Stmt::Return(x) => (),
             _ => (),
         }
     }
 
-    fn gen_ann_assign(&self, &StmtAnnAssign) {
-        
+    fn gen_ann_assign(&self, node: &StmtAnnAssign) {
+        let annotation = &node.annotation;
+        let value = &node.value;
+        let target = &node.target;
+        // This isn't useful for me
+        // let simple = &node.simple;
+        // This only for debug purpose?
+        // let range = &node.range;
     }
 }

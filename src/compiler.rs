@@ -10,6 +10,8 @@ pub fn run(filename: &str) -> CompilerResult<()> {
     let program = parse(source.as_str(), Mode::Module, filename)?;
     let stmts = parser_tool::extract_module_body(program)?;
 
+    println!("{:?}", stmts);
+
     let context = Context::create();
     let module = context.create_module(module_name);
     let builder = context.create_builder();
