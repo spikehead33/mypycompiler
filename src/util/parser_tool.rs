@@ -27,6 +27,10 @@ pub fn extract_variables(node: &Expr) -> Vec<ExprName> {
     variables
 }
 
+pub fn extract_variables_init_values(node: &Expr) -> Vec<_> {
+    
+}
+
 #[cfg(test)]
 mod test {
     #[test]

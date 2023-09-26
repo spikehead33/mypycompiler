@@ -6,6 +6,8 @@ use rustpython_parser::ast::{
     StmtWhile,
 };
 
+use crate::util::parser_tool;
+
 pub struct Codegen<'ctx, 'a> {
     pub context: &'ctx Context,
     pub module: &'a Module<'ctx>,
@@ -42,5 +44,7 @@ impl<'ctx, 'a> Codegen<'ctx, 'a> {
         // let simple = &node.simple;
         // This only for debug purpose?
         // let range = &node.range;
+
+        let variables = parser_tool::extract_variables(target);
     }
 }
